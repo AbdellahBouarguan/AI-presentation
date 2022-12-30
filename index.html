@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Presentation</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      .slide {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(15, 107, 134);
+        background-image: url("1398314.jpg");
+        background-size: cover;
+        color: white;
+      }
+      .slide h1 {
+        font-size: 3em;
+        margin: 0;
+      }
+      .slide p {
+        font-size: 1.5em;
+        margin: 1em 0.5em;
+      }
+      .slide img {
+        max-width: 65%;
+        max-height: 65%;
+        height: auto;
+      }
+      .slide.anim {
+        animation: zoom-in-zoom-out 60s ease none;
+      }
+      @keyframes zoom-in-zoom-out {
+        0% {
+          transform: scale(1, 1);
+        }
+        10% {
+          transform: scale(1.3, 1.3);
+        }
+        100% {
+          transform: scale(1, 1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide" id="1">
+      <h1>Introduction to AI</h1>
+      <p>
+        Welcome to this presentation on artificial intelligence! In this
+        presentation, we'll be exploring the basics of AI and how it's used in
+        the world today.
+      </p>
+    </div>
+    <div class="slide" id="2">
+      <h1>What is AI?</h1>
+      <p>
+        AI, or artificial intelligence, is the ability of a computer or machine
+        to perform tasks that would normally require human intelligence, such as
+        learning, problem-solving, and decision-making.
+      </p>
+      <img
+        src="aibuild.jpg"
+        alt="A diagram of a computer performing tasks with artificial intelligence"
+      />
+    </div>
+    <div class="slide anim" id="3">
+      <h1>Types of AI</h1>
+      <p>There are three main types of AI:</p>
+      <ul>
+        <li>Narrow or weak AI, which is designed to perform a specific task</li>
+        <li>
+          General or strong AI, which has the ability to perform any
+          intellectual task that a human can
+        </li>
+        <li>
+          Superintelligent AI, which is AI that surpasses human intelligence in
+          multiple domains
+        </li>
+      </ul>
+    </div>
+    <div class="slide anim" id="4">
+      <h1>Applications of AI</h1>
+      <p>AI is used in a variety of fields, including:</p>
+      <ul>
+        <li>Healthcare</li>
+        <li>Finance</li>
+        <li>Transportation</li>
+        <li>Manufacturing</li>
+        <li>Education</li>
+      </ul>
+    </div>
+    <div class="slide" id="5">
+      <h1>Exemple</h1>
+      <video controls>
+        <source src="AI.mp4" type="video/mp4" />
+        Your browser does not support the video element.
+      </video>
+    </div>
+    <div class="slide" id="6">
+      <h1>Conclusion</h1>
+      <p>
+        Thank you for joining me on this journey through the world of AI! I hope
+        you now have a better understanding of what AI is and how it's being
+        used in the world today.
+      </p>
+    </div>
+
+    <script>
+      var s = document.querySelectorAll(".slide");
+      var n = 0;
+      document.addEventListener("keydown", function (event) {
+        if (event.keyCode == 37) {
+          //alert("Left was pressed " + n);
+          n--;
+          s.forEach((e) => {
+            e.id == n.toString()
+              ? (e.style.display = "flex")
+              : (e.style.display = "none");
+          });
+        } else if (event.keyCode == 39) {
+          //alert("Right was pressed " + n);
+          n++;
+          s.forEach((e) => {
+            e.id == n.toString()
+              ? (e.style.display = "flex")
+              : (e.style.display = "none");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
